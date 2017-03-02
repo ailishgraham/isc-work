@@ -146,7 +146,7 @@ b = "maybe"
 print a 
 print b
 
- import copy 
+import copy 
 
 a = [0, 1, 2]
 b = copy.deepcopy(a)
@@ -155,6 +155,16 @@ print b
 b[0]= "hello"
 print a
 print b
+
+l = [range(5), range(5)]
+print l
+x = l[0]
+print x
+x.remove(3)
+print x
+print l
+newlist = copy.deepcopy(l)
+print newlist
 
 #FUNCTIONS
 
@@ -184,6 +194,71 @@ def calc_hypo(a,b):
 print calc_hypo(3, 4)
 
     
+#reading lines from files
+
+##with open (filename, 'r') as reader:
+    ##print reader.readline()
+    ##x =reader.readlines()
+
+#writing files
+
+##with open(filename, "w") as writer:       writes blah blah blah to file
+    ##writer.write("blah blah blah python...\n)
+##with open(filename) as reader:
+    ##print reader.read                     prints what we've written
+
+#FUNCTIONS RECAP#
+
+##def test(*arguments):
+#    print len(arguments)
+#    print arguments
+
+#test()
+#test(1,5)
+#test(3,4,5,5,5,5,5)
+#return same as input
+
+#def func(x):
+#    if type(x) == str:
+#        print "you are words"
+#        return 
+#    else:
+#        print "GREAT"
+#        return x * 1000
+
+
+# Sets and Dictionaries
+
+#creating 2 sets to work with
+
+a  = set([0, 1, 2, 3, 4, 5])
+b = set ([2, 4, 6, 8])
+print a.union(b)
+print a.intersection(b) 
+
+#collect up counts using a dictionary
+
+band = ["mel","geri","victoria","mel","emma"]
+counts = {}
+for name in band:
+    if name not in counts:
+        counts[name] = 1
+    else:
+        counts[name] += 1
+for name in counts:
+    print name, counts[name]
+
+
+if {}: 
+    print "hi"
+
+d = {"maggie": "uk", "ronnie": "usa"}
+dir(d) 
+print d.items()
+print d.keys()
+print d.values()
+res = d.setdefault("marco", "italy")
+print res, d("marco")
 
 
 
